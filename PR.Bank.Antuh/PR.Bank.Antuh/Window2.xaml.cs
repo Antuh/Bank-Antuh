@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,9 +22,12 @@ namespace PR.Bank.Antuh
     /// </summary>
     public partial class Window2 : Window
     {
-        public Window2()
+        public Window2(string n)
         {
+            //передача дохода с первой формы
             InitializeComponent();
+            tbl_stabilitydohod.Text = n + " руб.";
+            
         }
 
         private void bt_vkladfour_Click(object sender, RoutedEventArgs e)
@@ -61,6 +66,20 @@ namespace PR.Bank.Antuh
                 {
                     encoder.Save(stream);
                 }
+                //Create a new PDF document.
+                PdfDocument doc = new PdfDocument();
+                //Add a page to the document.
+                PdfPage page = doc.Pages.Add();
+                //Create PDF graphics for the page
+                PdfGraphics graphics = page.Graphics;
+                //Load the image from the disk.
+                PdfBitmap image = new PdfBitmap(@"D:\Download\screenshot.png");
+                //Draw the image
+                graphics.DrawImage(image, 0, 0);
+                //Save the document.
+                doc.Save(@"D:\Download\screenshot1.pdf");
+                //Close the document.
+                doc.Close(true);
             }
             catch (Exception e)
             {
@@ -70,10 +89,10 @@ namespace PR.Bank.Antuh
    
         private void bt_vkladthree_Click(object sender, RoutedEventArgs e)
         {
-            var name = tbl_stability.Text;//фио студента
-            var kafedra = tbl_stabilitydohod.Text;//кафедра
-            var profession = tbl_stabilitystavka.Text;//специальность
-            var groupe = tbl_stabilitysumma.Text;//группа
+            var name = tbl_stability.Text;
+            var kafedra = tbl_stabilitydohod.Text;
+            var profession = tbl_stabilitystavka.Text;
+            var groupe = tbl_stabilitysumma.Text;
   
             Window3 form = new Window3(name, kafedra, profession, groupe);
             form.Show();
@@ -81,22 +100,22 @@ namespace PR.Bank.Antuh
 
         private void btn_vkladone_Click(object sender, RoutedEventArgs e)
         {
-            /*var name = tbl_stability.Text;//фио студента
-            var kafedra = tbl_stabilitydohod.Text;//кафедра
-            var profession = tbl_stabilitystavka.Text;//специальность
-            var groupe = tbl_stabilitysumma.Text;//группа
+            var name = tbl_optimal.Text;
+            var kafedra = tbl_optimaldohod.Text;
+            var profession = tbl_optimalstavka.Text;
+            var groupe = tbl_optimalsumma.Text;
             Window3 form = new Window3(name, kafedra, profession, groupe);
-            form.Show();*/
+            form.Show();
         }
 
         private void bt_vkladtwo_Click(object sender, RoutedEventArgs e)
         {
-            /*var name = tbl_stability.Text;//фио студента
-            var kafedra = tbl_stabilitydohod.Text;//кафедра
-            var profession = tbl_stabilitystavka.Text;//специальность
-            var groupe = tbl_stabilitysumma.Text;//группа
+            var name = tbl_standart.Text;
+            var kafedra = tbl_standartdohod.Text;
+            var profession = tbl_standartstavka.Text;
+            var groupe = tbl_standartsumma.Text;
             Window3 form = new Window3(name, kafedra, profession, groupe);
-            form.Show();*/
+            form.Show();
         }
     }
 }

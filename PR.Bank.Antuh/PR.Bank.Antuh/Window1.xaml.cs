@@ -23,11 +23,13 @@ namespace PR.Bank.Antuh
         public Window1()
         {
             InitializeComponent();
+
         }
 
         private void bt_compare_Click(object sender, RoutedEventArgs e)
-        {
-            Window2 form = new Window2();
+        {//передача данных
+            var n = tbl_stab_result.Text;
+            Window2 form = new Window2(n);
             form.Show();
         }
 
@@ -35,6 +37,18 @@ namespace PR.Bank.Antuh
         {
             NumberFormatInfo nfi = new NumberFormatInfo { NumberGroupSeparator = " ", NumberDecimalDigits = 0 };
             tb_sum.Text = ((Slider)sender).Value.ToString("n", nfi);
+            try
+            {
+                double n = Convert.ToDouble(tb_sum.Text);
+                double k = Convert.ToDouble(tb_srok.Text);
+                double s = Convert.ToDouble(tb_popoln.Text);
+                double m = n * k * s;
+                tbl_stab_result.Text = Convert.ToString(m);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void sl_srok_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

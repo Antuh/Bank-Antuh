@@ -55,3 +55,9 @@ C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\obj\Debug\PR.Bank.Antuh
 C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\obj\Debug\PR.Bank.Antuh.exe
 C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\obj\Debug\PR.Bank.Antuh.pdb
 C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\obj\Debug\PR.Bank.Antuh.csproj.ResolveComReference.cache
+C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\Users\Sergey\Desktop\Bank\PR.Bank.Antuh\PR.Bank.Antuh\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
