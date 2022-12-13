@@ -73,20 +73,20 @@
             <TextBlock x:Name="tbl_stability" Grid.Column="1" HorizontalAlignment="Left" Margin="14,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Стабильный" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="103" FontSize="18"/>
             <TextBlock x:Name="tbl_stabilitydohod" Grid.Column="3" HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="45 845 Руб." VerticalAlignment="Center" FontSize="18" Width="128" Grid.ColumnSpan="2"/>
             <TextBlock x:Name="tbl_stabilitysumma" Grid.Column="5" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="645 845 Руб." VerticalAlignment="Center" FontSize="18" Width="128" Grid.ColumnSpan="2"/>
-            <TextBlock x:Name="tbl_stabilitystavka" Grid.Column="7" HorizontalAlignment="Left" Margin="42,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="9,85 % Руб." VerticalAlignment="Center" FontSize="18" Width="108" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbl_stabilitystavka" Grid.Column="7" HorizontalAlignment="Left" Margin="42,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="8 % Руб." VerticalAlignment="Center" FontSize="18" Width="108" Grid.ColumnSpan="2"/>
 
             <Line x:Name="ln_optimal" X1="0" Y1="0" X2="930" Y2="0" Stroke="#bdd7ee" Grid.Row="5" Margin="10,22,0,0" Grid.ColumnSpan="10" StrokeThickness="2" Height="1" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="800"/>
 
             <TextBlock x:Name="tbl_optimal" Grid.Column="1" HorizontalAlignment="Left" Margin="14,11,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="134" FontSize="18" Text="Оптимальный"/>
             <TextBlock x:Name="tbl_optimaldohod" Grid.Column="3" HorizontalAlignment="Left" Margin="32,11,0,0" Grid.Row="4" TextWrapping="Wrap" Text="45 845 Руб." VerticalAlignment="Top" FontSize="18" Width="128" Grid.ColumnSpan="2"/>
             <TextBlock x:Name="tbl_optimalsumma" Grid.Column="5" HorizontalAlignment="Left" Margin="18,11,0,0" Grid.Row="4" TextWrapping="Wrap" Text="645 845 Руб." VerticalAlignment="Top" FontSize="18" Width="128" Grid.ColumnSpan="2"/>
-            <TextBlock x:Name="tbl_optimalstavka" Grid.Column="7" HorizontalAlignment="Left" Margin="42,11,0,0" Grid.Row="4" TextWrapping="Wrap" Text="9,85 % Руб." VerticalAlignment="Top" FontSize="18" Width="108" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbl_optimalstavka" Grid.Column="7" HorizontalAlignment="Left" Margin="42,11,0,0" Grid.Row="4" TextWrapping="Wrap" Text="5 % Руб." VerticalAlignment="Top" FontSize="18" Width="108" Grid.ColumnSpan="2"/>
 
             <Line x:Name="ln_standart" X1="0" Y1="0" X2="930" Y2="0" Stroke="#bdd7ee" Grid.Row="7" Margin="10,22,0,0" Grid.ColumnSpan="10" StrokeThickness="2" Height="1" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="800"/>
             <TextBlock x:Name="tbl_standart" Grid.Column="1" HorizontalAlignment="Left" Margin="14,11,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="134" FontSize="18" Text="Стандарт"/>
             <TextBlock x:Name="tbl_standartdohod" Grid.Column="3" HorizontalAlignment="Left" Margin="32,11,0,0" Grid.Row="6" TextWrapping="Wrap" Text="45 845 Руб." VerticalAlignment="Top" FontSize="18" Width="128" Grid.ColumnSpan="2"/>
             <TextBlock x:Name="tbl_standartsumma" Grid.Column="5" HorizontalAlignment="Left" Margin="18,11,0,0" Grid.Row="6" TextWrapping="Wrap" Text="645 845 Руб." VerticalAlignment="Top" FontSize="18" Width="128" Grid.ColumnSpan="2"/>
-            <TextBlock x:Name="tbl_standartstavka" Grid.Column="7" HorizontalAlignment="Left" Margin="42,11,0,0" Grid.Row="6" TextWrapping="Wrap" Text="9,85 % Руб." VerticalAlignment="Top" FontSize="18" Width="108" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="tbl_standartstavka" Grid.Column="7" HorizontalAlignment="Left" Margin="42,11,0,0" Grid.Row="6" TextWrapping="Wrap" Text="6 % Руб." VerticalAlignment="Top" FontSize="18" Width="108" Grid.ColumnSpan="2"/>
 
         </Grid>
         <Button x:Name="bt_vkladthree" Grid.Column="8" Content="Открыть вклад" Margin="74,0,0,0" Grid.Row="2" VerticalAlignment="Center" Background="#FF2C7DE0" BorderBrush="{x:Null}" Foreground="White" Grid.ColumnSpan="3" Height="30" FontSize="18" HorizontalAlignment="Left" Width="154"   Cursor="Hand" Click="bt_vkladthree_Click">

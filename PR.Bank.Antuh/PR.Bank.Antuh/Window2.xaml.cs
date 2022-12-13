@@ -22,12 +22,17 @@ namespace PR.Bank.Antuh
     /// </summary>
     public partial class Window2 : Window
     {
-        public Window2(string n)
+        public Window2(string n, string x, string j, double stabotvet, double stabotvet1, double stabotvet2)
         {
             //передача дохода с первой формы
             InitializeComponent();
-            tbl_stabilitydohod.Text = n + " руб.";
-            
+            tbl_stabilitydohod.Text = n ;
+            tbl_optimaldohod.Text = x ;
+            tbl_standartdohod.Text = j;
+
+            tbl_stabilitysumma.Text = Convert.ToDecimal(stabotvet).ToString("#,##0 Руб.");
+            tbl_optimalsumma.Text = Convert.ToDecimal(stabotvet1).ToString("#,##0 Руб.");
+            tbl_standartsumma.Text = Convert.ToDecimal(stabotvet2).ToString("#,##0 Руб.");
         }
 
         private void bt_vkladfour_Click(object sender, RoutedEventArgs e)

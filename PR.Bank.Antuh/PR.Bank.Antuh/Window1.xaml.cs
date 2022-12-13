@@ -29,7 +29,22 @@ namespace PR.Bank.Antuh
         private void bt_compare_Click(object sender, RoutedEventArgs e)
         {//передача данных
             var n = tbl_stab_result.Text;
-            Window2 form = new Window2(n);
+            var x = tbl_opt_result.Text;
+            var j = tbl_standart_result.Text;
+            double srok = Convert.ToDouble(tb_srok.Text);
+
+
+            var t = Convert.ToDouble(tb_sum.Text);
+            //double k = Convert.ToDouble(tb_srok.Text);
+            //double s = Convert.ToDouble(tb_popoln.Text);
+            double stavkastab = 0.08;
+            double stavkaoptimal = 0.05;
+            double stavkastandart = 0.06;
+            double stabotvet = t * Math.Pow((1 + stavkastab / 365),srok);
+            double stabotvet1 = t * Math.Pow((1 + stavkaoptimal / 365), srok);
+            double stabotvet2 = t * Math.Pow((1 + stavkastandart / 365), srok);
+
+            Window2 form = new Window2(n, x, j, stabotvet, stabotvet1, stabotvet2);
             form.Show();
         }
 
@@ -40,10 +55,18 @@ namespace PR.Bank.Antuh
             try
             {
                 double n = Convert.ToDouble(tb_sum.Text);
-                double k = Convert.ToDouble(tb_srok.Text);
-                double s = Convert.ToDouble(tb_popoln.Text);
-                double m = n * k * s;
-                tbl_stab_result.Text = Convert.ToString(m);
+                //double k = Convert.ToDouble(tb_srok.Text);
+                //double s = Convert.ToDouble(tb_popoln.Text);
+                double stavkastab = 0.08;
+                double stavkaoptimal = 0.05;
+                double stavkastandart = 0.06;
+                double m = n * stavkastab;
+                double l = n * stavkaoptimal;
+                double p = n * stavkastandart;
+
+                tbl_stab_result.Text = Convert.ToDecimal(m).ToString("#,##0 Руб.");
+                tbl_opt_result.Text = Convert.ToDecimal(l).ToString("#,##0 Руб.");
+                tbl_standart_result.Text = Convert.ToDecimal(p).ToString("#,##0 Руб.");
             }
             catch
             {
