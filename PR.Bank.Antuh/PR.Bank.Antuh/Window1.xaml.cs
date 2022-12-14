@@ -55,14 +55,14 @@ namespace PR.Bank.Antuh
             try
             {
                 double n = Convert.ToDouble(tb_sum.Text);
-                //double k = Convert.ToDouble(tb_srok.Text);
-                //double s = Convert.ToDouble(tb_popoln.Text);
+                double srok = Convert.ToDouble(tb_srok.Text);
+                double popoln = Convert.ToDouble(tb_popoln.Text);
                 double stavkastab = 0.08;
                 double stavkaoptimal = 0.05;
                 double stavkastandart = 0.06;
-                double m = n * stavkastab;
-                double l = n * stavkaoptimal;
-                double p = n * stavkastandart;
+                double m = n * stavkastab * srok / 365;
+                double l = n * stavkaoptimal * srok / 365;
+                double p = n * stavkastandart * srok / 365;
 
                 tbl_stab_result.Text = Convert.ToDecimal(m).ToString("#,##0 Руб.");
                 tbl_opt_result.Text = Convert.ToDecimal(l).ToString("#,##0 Руб.");

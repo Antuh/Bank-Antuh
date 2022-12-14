@@ -23,16 +23,16 @@ namespace PR.Bank.Antuh
     public partial class Window3 : Window
     {
         private string name;
-        private string kafedra;
-        private string profession;
-        private string groupe;
-        public Window3(string names, string kafedras, string professions, string groupes)
+        private string dohod;
+        private string stavka;
+        private string summa;
+        public Window3(string names, string dohods, string stavkas, string summas)
         {
             InitializeComponent();
             name = names;
-            kafedra = kafedras;
-            profession = professions;
-            groupe = groupes;
+            dohod = dohods;
+            stavka = stavkas;
+            summa = summas;
         }
 
 
@@ -62,9 +62,9 @@ namespace PR.Bank.Antuh
 
                     //Вставка вмето специальных выражений в нашем файле
                     ReplaceWordsStub("{name}", name, wordDocument);
-                    ReplaceWordsStub("{kafedra}", kafedra, wordDocument);
-                    ReplaceWordsStub("{profession}", profession, wordDocument);
-                    ReplaceWordsStub("{groupe}", groupe, wordDocument);
+                    ReplaceWordsStub("{kafedra}", dohod, wordDocument);
+                    ReplaceWordsStub("{profession}", stavka, wordDocument);
+                    ReplaceWordsStub("{groupe}", summa, wordDocument);
 
 
                     wordDocument.SaveAs2(@"D:\Download\Word1.docx");//сохроняем наш документ
@@ -95,7 +95,7 @@ namespace PR.Bank.Antuh
         private void ReplaceWordsStub(string stubToReplace, string text, Word.Document wordDocument)
         {
             var range = wordDocument.Content;//перменная для хранения данных документа
-            range.Find.ClearFormatting();//метод сброса всех натсроек текста
+            range.Find.ClearFormatting();//метод сброса всех натстроек текста
             range.Find.Execute(FindText: stubToReplace, ReplaceWith: text);//находим ключевые слова и заменяем их
         }
     }

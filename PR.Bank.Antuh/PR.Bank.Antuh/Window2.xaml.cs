@@ -95,31 +95,33 @@ namespace PR.Bank.Antuh
         private void bt_vkladthree_Click(object sender, RoutedEventArgs e)
         {
             var name = tbl_stability.Text;
-            var kafedra = tbl_stabilitydohod.Text;
-            var profession = tbl_stabilitystavka.Text;
-            var groupe = tbl_stabilitysumma.Text;
+            var dohod = tbl_stabilitydohod.Text;
+            var stavka = tbl_stabilitystavka.Text;
+            var summa = tbl_stabilitysumma.Text;
   
-            Window3 form = new Window3(name, kafedra, profession, groupe);
+            Window3 form = new Window3(name, dohod, stavka, summa);
             form.Show();
         }
 
         private void btn_vkladone_Click(object sender, RoutedEventArgs e)
         {
             var name = tbl_optimal.Text;
-            var kafedra = tbl_optimaldohod.Text;
-            var profession = tbl_optimalstavka.Text;
-            var groupe = tbl_optimalsumma.Text;
-            Window3 form = new Window3(name, kafedra, profession, groupe);
+            var dohod = tbl_optimaldohod.Text;
+            var stavka = tbl_optimalstavka.Text;
+            var summa = tbl_optimalsumma.Text;
+
+            Window3 form = new Window3(name, dohod, stavka, summa);
             form.Show();
         }
 
         private void bt_vkladtwo_Click(object sender, RoutedEventArgs e)
         {
             var name = tbl_standart.Text;
-            var kafedra = tbl_standartdohod.Text;
-            var profession = tbl_standartstavka.Text;
-            var groupe = tbl_standartsumma.Text;
-            Window3 form = new Window3(name, kafedra, profession, groupe);
+            var dohod = tbl_standartdohod.Text;
+            var stavka = tbl_standartstavka.Text;
+            var summa = tbl_standartsumma.Text;
+
+            Window3 form = new Window3(name, dohod, stavka, summa);
             form.Show();
         }
     }
