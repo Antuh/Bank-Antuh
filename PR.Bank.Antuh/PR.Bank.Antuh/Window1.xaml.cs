@@ -41,12 +41,19 @@ namespace PR.Bank.Antuh
             double stavkastab = 0.08;
             double stavkaoptimal = 0.05;
             double stavkastandart = 0.06;
-            double stabotvet = t * Math.Pow((1 + stavkastab / 365),srok);
-            double stabotvet1 = t * Math.Pow((1 + stavkaoptimal / 365), srok);
-            double stabotvet2 = t * Math.Pow((1 + stavkastandart / 365), srok);
-
-            Window2 form = new Window2(n, x, j, stabotvet, stabotvet1, stabotvet2, srok);
-            form.Show();
+            try
+            {
+                double stabotvet = t * Math.Pow((1 + stavkastab / 365), srok);
+                double stabotvet1 = t * Math.Pow((1 + stavkaoptimal / 365), srok);
+                double stabotvet2 = t * Math.Pow((1 + stavkastandart / 365), srok);
+                Window2 form = new Window2(n, x, j, stabotvet, stabotvet1, stabotvet2, srok, t);
+                form.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+            
         }
 
         private void sl_sum_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

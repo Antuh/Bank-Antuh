@@ -27,7 +27,8 @@ namespace PR.Bank.Antuh
         private string stavka;
         private string summa;
         private string srokkredita;
-        public Window3(string names, string dohods, string stavkas, string summas, double srokkredits)
+        private string summavkladas;
+        public Window3(string names, string dohods, string stavkas, string summas, double srokkredits, double summavklada)
         {
             InitializeComponent();
             name = names;
@@ -35,6 +36,7 @@ namespace PR.Bank.Antuh
             stavka = stavkas;
             summa = summas;
             srokkredita = Convert.ToString(srokkredits);
+            summavkladas = Convert.ToDecimal(summavklada).ToString("#,##0 Руб.");
         }
 
 
@@ -49,6 +51,14 @@ namespace PR.Bank.Antuh
             string password = tb_password.Password;
             Entities m = new Entities();
             var authorization = m.User;
+            var contract = m.Contract;
+            var bank = m.BankAccount;
+
+            var idcontract = contract.OrderByDescending(x => x.IDContract).First().IDContract;
+            var contractid = Convert.ToString(idcontract + 1);
+
+            var bankaccount = bank.OrderByDescending(x => x.NumberAccount).First().NumberAccount;
+            var accountbank = Convert.ToString(bankaccount + 1);
 
 
             var user = authorization.Where(x => x.Login == login && x.Password == password).FirstOrDefault();
@@ -87,6 +97,10 @@ namespace PR.Bank.Antuh
                     ReplaceWordsStub("{month}", month, wordDocument);
                     ReplaceWordsStub("{year}", year, wordDocument);
 
+                    ReplaceWordsStub("{contractid}", contractid, wordDocument);
+
+                    ReplaceWordsStub("{accountbank}", accountbank, wordDocument);
+
                     ReplaceWordsStub("{dateend}", formatted, wordDocument);
 
                     ReplaceWordsStub("{birth}", birth, wordDocument);
@@ -123,7 +137,7 @@ namespace PR.Bank.Antuh
 
                     ReplaceWordsStub("{stavka}", stavka, wordDocument);
 
-                    ReplaceWordsStub("{groupe}", summa, wordDocument);
+                    ReplaceWordsStub("{groupe}", summavkladas, wordDocument);
 
 
                     wordDocument.SaveAs2(@"D:\Download\Word1.docx");//сохроняем наш документ
@@ -142,8 +156,7 @@ namespace PR.Bank.Antuh
             {
                 MessageBox.Show("Кооректно введите логин и пароль");
             }
-
-
+           
         }
         /// <summary>
         /// Метод замены ключевых слов на данные
