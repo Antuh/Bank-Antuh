@@ -26,19 +26,21 @@ namespace PR.Bank.Antuh
         private string dohod;
         private string stavka;
         private string summa;
-        public Window3(string names, string dohods, string stavkas, string summas)
+        private string srokkredita;
+        public Window3(string names, string dohods, string stavkas, string summas, double srokkredits)
         {
             InitializeComponent();
             name = names;
             dohod = dohods;
             stavka = stavkas;
             summa = summas;
+            srokkredita = Convert.ToString(srokkredits);
         }
 
 
 
 
-        private readonly string TemplateFileName = @"D:\Download\Word.docx";//путь к файлу
+        private readonly string TemplateFileName = @"D:\Download\Word.docx";//таков путь
 
 
         private void btn_voity_Click(object sender, RoutedEventArgs e)
@@ -52,6 +54,26 @@ namespace PR.Bank.Antuh
             var user = authorization.Where(x => x.Login == login && x.Password == password).FirstOrDefault();
             if (user != null)
             {
+                string surname = user.Surname;
+                string nameuser = user.Name;
+                string patronymic = user.Patronymic;
+                string seriespasport = user.Series;
+                string numberpassport = user.Number;
+                string passportotdel = user.Issued;
+                string address = user.Adress;
+                string birth = Convert.ToString(user.DateOfBirth);
+                string email = user.E_Mail;
+                string mapbirth = user.PlaceOfBirth;
+                string date = DateTime.Now.ToString("dd");
+                string month = DateTime.Now.ToString("MM");
+                string year = DateTime.Now.ToString("yyyy");
+
+                DateTime d1 = DateTime.Now;
+                int diff = Convert.ToInt32(srokkredita);
+                DateTime result = d1.AddDays(diff);
+                string formatted = result.ToString("dd-MM-yyyy");
+               
+
                 MessageBox.Show("Авторизация выполнена успешно");
 
                 var wordApp = new Word.Application();//переменная для word
@@ -61,9 +83,46 @@ namespace PR.Bank.Antuh
                     var wordDocument = wordApp.Documents.Open(TemplateFileName);//переменная для хранения нашего документа
 
                     //Вставка вмето специальных выражений в нашем файле
+                    ReplaceWordsStub("{date}", date, wordDocument);
+                    ReplaceWordsStub("{month}", month, wordDocument);
+                    ReplaceWordsStub("{year}", year, wordDocument);
+
+                    ReplaceWordsStub("{dateend}", formatted, wordDocument);
+
+                    ReplaceWordsStub("{birth}", birth, wordDocument);
+
+                    ReplaceWordsStub("{srokkredita}", srokkredita, wordDocument);
+
                     ReplaceWordsStub("{name}", name, wordDocument);
+
+                    ReplaceWordsStub("{surname}", surname, wordDocument);
+
+                    ReplaceWordsStub("{nameuser}", nameuser, wordDocument);
+
+                    ReplaceWordsStub("{patronymic}", patronymic, wordDocument);
+
+                    ReplaceWordsStub("{surname}", surname, wordDocument);
+
+                    ReplaceWordsStub("{nameuser}", nameuser, wordDocument);
+
+                    ReplaceWordsStub("{patronymic}", patronymic, wordDocument);
+
+                    ReplaceWordsStub("{seriespasport}", seriespasport, wordDocument);
+
+                    ReplaceWordsStub("{numberpassport}", numberpassport, wordDocument);
+
+                    ReplaceWordsStub("{passportotdel}", passportotdel, wordDocument);
+
+                    ReplaceWordsStub("{address}", address, wordDocument);
+
+                    ReplaceWordsStub("{email}", email, wordDocument);
+
+                    ReplaceWordsStub("{mapbirth}", mapbirth, wordDocument);
+
                     ReplaceWordsStub("{kafedra}", dohod, wordDocument);
-                    ReplaceWordsStub("{profession}", stavka, wordDocument);
+
+                    ReplaceWordsStub("{stavka}", stavka, wordDocument);
+
                     ReplaceWordsStub("{groupe}", summa, wordDocument);
 
 

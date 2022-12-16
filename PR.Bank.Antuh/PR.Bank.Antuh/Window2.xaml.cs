@@ -22,13 +22,15 @@ namespace PR.Bank.Antuh
     /// </summary>
     public partial class Window2 : Window
     {
-        public Window2(string n, string x, string j, double stabotvet, double stabotvet1, double stabotvet2)
+        public double srokkredits;
+        public Window2(string n, string x, string j, double stabotvet, double stabotvet1, double stabotvet2, double srok)
         {
             //передача дохода с первой формы
             InitializeComponent();
             tbl_stabilitydohod.Text = n ;
             tbl_optimaldohod.Text = x ;
             tbl_standartdohod.Text = j;
+            srokkredits = srok;
 
             tbl_stabilitysumma.Text = Convert.ToDecimal(stabotvet).ToString("#,##0 Руб.");
             tbl_optimalsumma.Text = Convert.ToDecimal(stabotvet1).ToString("#,##0 Руб.");
@@ -99,7 +101,7 @@ namespace PR.Bank.Antuh
             var stavka = tbl_stabilitystavka.Text;
             var summa = tbl_stabilitysumma.Text;
   
-            Window3 form = new Window3(name, dohod, stavka, summa);
+            Window3 form = new Window3(name, dohod, stavka, summa, srokkredits);
             form.Show();
         }
 
@@ -110,7 +112,7 @@ namespace PR.Bank.Antuh
             var stavka = tbl_optimalstavka.Text;
             var summa = tbl_optimalsumma.Text;
 
-            Window3 form = new Window3(name, dohod, stavka, summa);
+            Window3 form = new Window3(name, dohod, stavka, summa, srokkredits);
             form.Show();
         }
 
@@ -120,8 +122,9 @@ namespace PR.Bank.Antuh
             var dohod = tbl_standartdohod.Text;
             var stavka = tbl_standartstavka.Text;
             var summa = tbl_standartsumma.Text;
+            
 
-            Window3 form = new Window3(name, dohod, stavka, summa);
+            Window3 form = new Window3(name, dohod, stavka, summa, srokkredits);
             form.Show();
         }
     }

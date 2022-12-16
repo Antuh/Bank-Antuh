@@ -31,6 +31,7 @@ namespace PR.Bank.Antuh
             var n = tbl_stab_result.Text;
             var x = tbl_opt_result.Text;
             var j = tbl_standart_result.Text;
+  
             double srok = Convert.ToDouble(tb_srok.Text);
 
 
@@ -44,7 +45,7 @@ namespace PR.Bank.Antuh
             double stabotvet1 = t * Math.Pow((1 + stavkaoptimal / 365), srok);
             double stabotvet2 = t * Math.Pow((1 + stavkastandart / 365), srok);
 
-            Window2 form = new Window2(n, x, j, stabotvet, stabotvet1, stabotvet2);
+            Window2 form = new Window2(n, x, j, stabotvet, stabotvet1, stabotvet2, srok);
             form.Show();
         }
 
